@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
     fields["studentId"] = Field(FieldType.Integer, primaryKey: true , autoIncrement: true);
     fields["name"] = Field(FieldType.Text);
     fields["class"] = Field(FieldType.Text, foreignKey: true, to: "School_Class");
-    fields["score"] = Field(FieldType.Boolean);
+    fields["score"] = Field(FieldType.Real);
 
     Map<String , Field> classFields = new Map<String , Field>();
     classFields["className"] = Field(FieldType.Text, primaryKey: true );
@@ -42,14 +42,14 @@ class _MyAppState extends State<MyApp> {
     user["studentId"] = 1;
     user["name"] = null;
     user["class"] = "class9999";
-    user["score"] = false;
+    user["score"] = 99.6;
     FlutterOrmPlugin.saveOrm("Student", user);
 
     Query("Student").all().then((List l) {
       setState(() {
        List t = l;
        Map m = t[0];
-       bool b = m["score"];
+       num b = m["score"];
       });
     });
 
