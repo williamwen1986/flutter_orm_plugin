@@ -350,7 +350,7 @@ repositories {
 .
 .
 
-implementation 'com.github.williamwen1986:LuakitJitpack:1.0.10'
+implementation 'com.github.williamwen1986:LuakitJitpack:1.0.13'
 
 ```
 
