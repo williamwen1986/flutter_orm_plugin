@@ -13,14 +13,17 @@ buildscript {
     }
 }
 
-rootProject.allprojects {
+allprojects {
     repositories {
+        maven { url "https://jitpack.io" }
         google()
         jcenter()
     }
 }
 
+
 apply plugin: 'com.android.library'
+
 
 android {
     compileSdkVersion 27
