@@ -41,16 +41,13 @@ class _MyAppState extends State<MyApp> {
     Map<String , dynamic> user = new Map<String , dynamic>();
     user["studentId"] = 1;
     user["name"] = null;
-    user["class"] = "class9999";
+    user["class"] = "class999911";
     user["score"] = 99.6;
     FlutterOrmPlugin.saveOrm("Student", user);
 
-    Query("Student").all().then((List l) {
-      setState(() {
-       List t = l;
-       Map m = t[0];
-       num b = m["score"];
-      });
+    Query("Student").delete();
+    Query("Student").orderBy(["score desc"]).all().then((List l) {
+      List m = l;
     });
 
   }

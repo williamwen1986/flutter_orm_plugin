@@ -1,5 +1,5 @@
 name: flutter_orm_plugin_example
-description: Demonstrates how to use the flutter_orm_plugin plugin.
+description: Demonstrates how to use the flutter_orm_plugin plugin. It is base on flutter_luakit_plugin，It provide abundant example such like select update delete join orderby groupby and so on
 publish_to: 'none'
 
 environment:
