@@ -59,11 +59,11 @@ class FlutterOrmPlugin {
     await FlutterLuakitPlugin.callLuaFun("orm.class.table", "addTableInfo", args);
   }
 
-  static Future<void> saveOrm(String tableName, Map value) async {
+  static Future<dynamic> saveOrm(String tableName, Map value) async {
     Map<String, dynamic> args = new Map<String, dynamic>();
     args["name"] = tableName;
     args["args"] = value;
-    await FlutterLuakitPlugin.callLuaFun("orm.class.table", "saveOrm", args);
+    return await FlutterLuakitPlugin.callLuaFun("orm.class.table", "saveOrm", args);
   }
 
   static Future<void> batchSaveOrms(String tableName, List values) async {

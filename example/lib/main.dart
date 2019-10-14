@@ -43,7 +43,9 @@ class _MyAppState extends State<MyApp> {
     user["name"] = null;
     user["class"] = "class999911";
     user["score"] = 99.6;
-    FlutterOrmPlugin.saveOrm("Student", user);
+    FlutterOrmPlugin.saveOrm("Student", user).then((dynamic k){
+      dynamic key = k;
+    });
 
     Query("Student").delete();
     Query("Student").orderBy(["score desc"]).all().then((List l) {
