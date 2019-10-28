@@ -333,7 +333,7 @@ source 'https://github.com/williamwen1986/curl.git'
 .
 
 pod 'curl', '~> 1.0.0'
-pod 'LuakitPod', '~> 1.0.23'
+pod 'LuakitPod', '~> 1.0.24'
 
 ```
 
@@ -350,7 +350,7 @@ repositories {
 .
 .
 
-implementation 'com.github.williamwen1986:LuakitJitpack:1.0.13'
+implementation 'com.github.williamwen1986:LuakitJitpack:1.0.14'
 
 ```
 
