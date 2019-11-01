@@ -43,6 +43,7 @@ local dbData = {
     end,
 
 	setDBParams = function (k,v)
+		print("luakit orm setDBParams tableName ".. k.." type: " ..type(v))
 		_tableParams[k] = v
 	end,
 
@@ -51,7 +52,9 @@ local dbData = {
     end,
 
     tableParams = function (k)
-    	return _tableParams[k]
+		local ret = _tableParams[k]
+		print("luakit orm tableParams tableName ".. k.." type: " ..type(ret))
+    	return ret
     end,
 }
 return dbData

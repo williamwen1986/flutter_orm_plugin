@@ -177,6 +177,7 @@ end
 function Table.addTableInfoOnLogicThread(params,callback)
     local tableName = params.name
     local info = params.args
+    print("luakit orm addTableInfoOnLogicThread tableName ".. tableName.." type: " ..type(info))
     local threadId = lua_thread.createThread(BusinessThreadLOGIC,"DB_DATA")
     lua_thread.postToThreadSync(threadId,"orm.dbData","setDBParams",tableName, info)
     Table(tableName)
