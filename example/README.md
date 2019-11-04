@@ -333,7 +333,7 @@ source 'https://github.com/williamwen1986/curl.git'
 .
 
 pod 'curl', '~> 1.0.0'
-pod 'LuakitPod', '~> 1.0.24'
+pod 'LuakitPod/dynamic', '~> 1.0.28'
 
 ```
 
