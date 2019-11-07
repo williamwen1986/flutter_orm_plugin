@@ -27,11 +27,11 @@ class _JoinByGroupDemoState extends State<JoinByGroupDemo>
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(vsync: this, length: 3);
+    _tabController = new TabController(vsync: this, length: 2);
 
     Query("Student").delete();
     List orms = new List();
-    for (int i = 0; i < 99; i++) {
+    for (int i = 0; i < 50; i++) {
       List words = new List();
       words.addAll(generateWordPairs().take(1));
       WordPair np = words[0];

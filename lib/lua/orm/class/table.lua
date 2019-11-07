@@ -202,6 +202,14 @@ function Table.saveOrmOnLogicThread(params,callback)
 end
 
 function Table.batchSaveOrms(params,callback)
+    local function c(result)
+        callback(result)
+    end
+    local threadId = lua_thread.createThread(BusinessThreadLOGIC,"OrmsThread")
+    lua_thread.postToThread(threadId,"orm.class.table","batchSaveOrmsOnLogicThread",params, c);
+end
+
+function Table.batchSaveOrmsOnLogicThread(params,callback)
     local tableName = params.name
     local data = params.args
     local t = Table(tableName)
@@ -222,10 +230,6 @@ function Table.batchSaveOrms(params,callback)
     lua_thread.postToThread(t.cacheThreadId,"orm.cache","batchInsert",t.__tablename__,params)
     -- print("time -2 ".. require("socket").gettime())
     callback(nil);
-end
-
-function Table.batchSaveOrmsOnLogicThread(params,callback)
-    
 end
 
 function Table.prepareQuery(t,params)
