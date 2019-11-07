@@ -14,7 +14,7 @@ A orm database Flutter plugin.
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
-  s.dependency 'LuakitPod/dynamic', '>=  1.0.28'
+  s.dependency 'LuakitPod', '>=  1.0.24'
 
   s.dependency 'Flutter'
 
